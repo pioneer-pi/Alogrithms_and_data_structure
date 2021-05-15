@@ -61,14 +61,13 @@ database = [
     Product(4, 'D', 10, '2019-7-19', 4.2),
     Product(5, 'E', 50, '2019-12-4', 3.5),
     Product(6, 'F', 180, '2021-3-8', 3.9),
-    Product(7, 'F', 180, '2021-3-8', 7.9),
-    Product(8, 'F', 180, '2021-3-8', 6.9),
-    Product(9, 'F', 180, '2021-3-8', 5.9),
-    Product(10, 'F', 180, '2021-3-8', 4.9)
+    Product(100, 'ABC', 20, '2016-7-20', 3.1),
+    Product(101, 'BC', 50, '2016-8-13', 4.2),
+    Product(102, 'BC', 200, '2018-2-10', 4.1)
 ]
 def merge_sort2(array,left,right):
-    if left == right:
-        return
+    if left >= right:
+        return array
     middle = (left+right)//2
     merge_sort2(array,left,middle)
     merge_sort2(array,middle+1,right)
