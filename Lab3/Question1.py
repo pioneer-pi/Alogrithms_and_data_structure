@@ -51,3 +51,44 @@ topk = get_topk(database, 2)
 topk.sort(key=lambda x:x.rating, reverse=True)
 for d in topk:
     print('{}, {}'.format(d, d.rating))
+
+
+#Teacher's code
+def get_topk(database,k):
+    k_largest(database,0,len(database)-1,k)
+def k_largest(a,l,r,k):
+    if l < r:
+        p = partition(a,l,r)
+        if r-p+1 == k:
+            return
+        elif r-p+1 < k:
+            k_largest(a,l,p-1,k-r+p-1)
+        else:
+            k_largest(a,p+1,r,k)
+
+def partition(a,l,r):
+    if l > r:
+        raise IndexError("Index out of range")
+    elif l == r:
+        return l
+    else:
+        m = (l+r)//2
+        pivot_pos = sorted({l:a[l],m:a[m],r:a[r]}.items(), key = lambda  x:x[1].rating)[1][0]
+        pivot = a[pivot_pos]
+        a[pivot_pos] = a[l]
+        a[l] = pivot
+        i = l + 1
+        j = r
+        while True:
+            while i <= r and a[i].rating < pivot.rating:
+                i += 1
+            while j >= 1 and a[j].rating > pivot.rating:
+                j -= 1
+            if i < j:
+                tmp = a[i]
+                a[i] = a[j]
+                a[j] = tmp
+            else:
+                a[l] = a[j]
+                a[j] = pivot
+                return j

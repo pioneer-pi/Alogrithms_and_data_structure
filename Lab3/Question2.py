@@ -14,7 +14,7 @@ class minheap:
         return str_
 
     def build(self, lst):
-        self.data.extend(lst)
+        self.data = lst
         length = len(self)
         start = (length-1-1)//2
         while start >= 0:
@@ -60,14 +60,14 @@ class minheap:
             else:
                 break
 
-h = minheap()
-h.build([12, 3, 4, 7, 6, 13, 1, 10, 9, 8, 14])
-print(h)
-h.insert(11)
-print(h)
-x = h.delete_min()
-print(x)
-print(h)
+# h = minheap()
+# h.build([12, 3, 4, 7, 6, 13, 1, 10, 9, 8, 14])
+# print(h)
+# h.insert(11)
+# print(h)
+# x = h.delete_min()
+# print(x)
+# print(h)
 
 # h = minheap()
 # print(h)
