@@ -13,7 +13,7 @@ def DFS(graph,start):
     seen.add(start)
     while len(stack)>0:
         vertex = stack.pop()
-        nodes = graph[vertex ]
+        nodes = graph[vertex]
         for w in nodes:
             if w not in seen:
                 stack.append(w)

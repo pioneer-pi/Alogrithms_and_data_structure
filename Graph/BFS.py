@@ -36,7 +36,7 @@ def BFS(graph,start):
     seen.add(start)
     parent = {start:None}
     while len(queue)>0:
-        vertex = queue.pop()
+        vertex = queue.pop(0)
         nodes = graph[vertex]
         for w in nodes:
             if w not in seen:
