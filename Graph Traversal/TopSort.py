@@ -1,3 +1,6 @@
+"""
+You can call this topological sort.
+"""
 class Queue:
     """Queue implementation as a list"""
 

@@ -1,3 +1,6 @@
+'''
+The code about Merge sort in CSDN.
+'''
 def merge(left,right):
     res = []
     while (len(left) > 0) and (len(right) > 0):
@@ -42,6 +45,10 @@ def Merge_sort(array,left,right):
         for i in range(pointer2,right+1):
             sorted_list.append(array[i])
     array[left:right+1] = sorted_list
+
+'''
+My own answer
+'''
 
 import datetime
 class Product:
